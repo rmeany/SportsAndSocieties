@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_sports"
+        android:icon="@drawable/home_home"
+        android:title="Sports" />
+
+    <item
+        android:id="@+id/navigation_societies"
+        android:icon="@drawable/home_dashboard"
+        android:title="Societies" />
+
+    <item
+        android:id="@+id/navigation_admin"
+        android:icon="@drawable/home_notifications"
+        android:title="Admin" />
+
+</menu>
