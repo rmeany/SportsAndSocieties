@@ -47,8 +47,10 @@
         <activity
             android:name=".SportEventActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".SportFixtureActivity" />
-        <activity android:name=".SportResultActivity"></activity>
+        <activity android:name=".SportFixtureActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SportResultActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
