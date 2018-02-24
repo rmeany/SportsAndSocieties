@@ -4,12 +4,14 @@ package com.example.sportsandsocieties;
  * Created by abcd on 09/02/2018.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +40,7 @@ public class SportsClubResultsFragment extends Fragment {
     private ArrayList<String> SportResultListCitTeam = new ArrayList<String >();
     private ArrayList<String> SportResultListScore = new ArrayList<String >();
     private ArrayList<String> SportResultName = new ArrayList<String >();
+    private ArrayList<String> SportResultDate = new ArrayList<String >();
     View view;
 
     @Nullable
@@ -67,7 +70,7 @@ public class SportsClubResultsFragment extends Fragment {
 
                 HashMap<String, String> nameDate = new HashMap<>();
                 for (int i = 0;i<SportResultOpponentListName.size();i++){
-                    nameDate.put(SportResultListCitTeam.get(i) + " " + SportResultListScore.get(i) + " " + SportResultOpponentListName.get(i), SportResultListDate.get(i));
+                    nameDate.put(/*SportResultListCitTeam.get(i) + " " + SportResultListScore.get(i) + " " + */SportResultOpponentListName.get(i), SportResultListDate.get(i));
                 }
                 List<HashMap<String,String>> listItems = new ArrayList<>();
                 SimpleAdapter adapter = new SimpleAdapter(getActivity(), listItems, R.layout.list_item,
@@ -80,22 +83,21 @@ public class SportsClubResultsFragment extends Fragment {
                     resultsMap.put("First Line", pair.getKey().toString());
                     SportResultName.add(pair.getKey().toString());
                     resultsMap.put("Second Line", pair.getValue().toString());
+                    SportResultDate.add(pair.getValue().toString());
                     listItems.add(resultsMap);
                 }
                 listView.setAdapter(adapter);
 
-//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                        Intent intent = new Intent(getActivity(), SportFixtureActivity.class);
-//                        sportsFixture = SportFixtureName.get(position);
-//                        System.out.println(sportsClub);
-//                        System.out.println(sportsFixture);
-//                        intent.putExtra("sportsClub", sportsClub);
-//                        intent.putExtra("sportsFixture", sportsFixture);
-//                        startActivity(intent);
-//                    }
-//                });
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        Intent intent = new Intent(getActivity(), SportResultActivity.class);
+                        sportsResult = SportResultName.get(position) + " " + SportResultDate.get(position);
+                        intent.putExtra("sportsClub", sportsClub);
+                        intent.putExtra("sportsResult", sportsResult);
+                        startActivity(intent);
+                    }
+                });
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {}

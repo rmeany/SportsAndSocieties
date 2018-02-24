@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -65,7 +66,7 @@ public class SportsClubFixturesFragment extends Fragment {
 
                 HashMap<String, String> nameDate = new HashMap<>();
                 for (int i = 0;i<SportFixtureOpponentListName.size();i++){
-                    nameDate.put(SportFixtureListCitTeam.get(i) + " vs " + SportFixtureOpponentListName.get(i), SportFixtureListDate.get(i));
+                    nameDate.put(/*SportFixtureListCitTeam.get(i) + " vs " + */SportFixtureOpponentListName.get(i), SportFixtureListDate.get(i));
                 }
                 List<HashMap<String,String>> listItems = new ArrayList<>();
                 SimpleAdapter adapter = new SimpleAdapter(getActivity(), listItems, R.layout.list_item,
@@ -82,18 +83,16 @@ public class SportsClubFixturesFragment extends Fragment {
                 }
                 listView.setAdapter(adapter);
 
-//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                        Intent intent = new Intent(getActivity(), SportFixtureActivity.class);
-//                        sportsFixture = SportFixtureName.get(position);
-//                        System.out.println(sportsClub);
-//                        System.out.println(sportsFixture);
-//                        intent.putExtra("sportsClub", sportsClub);
-//                        intent.putExtra("sportsFixture", sportsFixture);
-//                        startActivity(intent);
-//                    }
-//                });
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        Intent intent = new Intent(getActivity(), SportFixtureActivity.class);
+                        sportsFixture = SportFixtureName.get(position) + " " + SportFixtureListDate.get(position);
+                        intent.putExtra("sportsClub", sportsClub);
+                        intent.putExtra("sportsFixture", sportsFixture);
+                        startActivity(intent);
+                    }
+                });
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {}

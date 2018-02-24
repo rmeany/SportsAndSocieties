@@ -20,4 +20,8 @@
     <string name="eventWhen">When:</string>
     <string name="eventWhere">Where:</string>
     <string name="eventDescription">Description:</string>
+    <string name="sportWhen">When:</string>
+    <string name="sportWhere">Where:</string>
+    <string name="sportOpponent">Opponent:</string>
+    <string name="vs">vs</string>
 </resources>

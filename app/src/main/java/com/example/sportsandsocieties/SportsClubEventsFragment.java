@@ -48,9 +48,6 @@ public class SportsClubEventsFragment extends Fragment {
         SportsClubActivity sca = (SportsClubActivity) getActivity();
         sportsClub = sca.getSportsClubName();
 
-        System.out.println(sportsClub);
-
-
         dbRef = fbdb.getReference().child("Sports Clubs").child(sportsClub).child("events");
         ValueEventListener eventEventListener = new ValueEventListener() {
             @Override
@@ -89,8 +86,6 @@ public class SportsClubEventsFragment extends Fragment {
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                         Intent intent = new Intent(getActivity(), SportEventActivity.class);
                         sportsEvent = SportEventName.get(position);
-                        System.out.println(sportsClub);
-                        System.out.println(sportsEvent);
                         intent.putExtra("sportsClub", sportsClub);
                         intent.putExtra("sportsEvent", sportsEvent);
                         startActivity(intent);
