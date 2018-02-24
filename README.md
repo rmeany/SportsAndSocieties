@@ -16,4 +16,4 @@ Societies:
 
 -Events...description, where, when
 
-Each event in the application has a button to indicate they're interested in going to the event. This is essentially an attendance tracker that will be able to provide analytics on what type of events have the biggest turnouts for a given Sports club or Society.
+Each event in the application has a button to indicate they're interested in going to the event. This is essentially an attendance tracker that can be used to provide end of year analytics on what type of events have the biggest turnouts for a given Sports club or Society.
