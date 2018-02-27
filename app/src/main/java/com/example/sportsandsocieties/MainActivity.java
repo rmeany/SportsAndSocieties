@@ -1,17 +1,13 @@
 package com.example.sportsandsocieties;
 
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -42,13 +38,6 @@ public class MainActivity extends AppCompatActivity {
                                     new SocietiesFragment())
                             .commit();
                     return true;
-                case R.id.navigation_admin:
-                    getSupportActionBar().setTitle("Admin");
-                    fragmentManager.beginTransaction().
-                            replace(R.id.content_frame,
-                                    new AdminFragment())
-                            .commit();
-                    return true;
             }
             return false;
         }
@@ -66,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
-        mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }

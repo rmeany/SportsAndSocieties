@@ -2,21 +2,13 @@
     <string name="app_name">CIT Sports and Societies</string>
     <string name="title_sports">Sports</string>
     <string name="title_societies">Societies</string>
-    <string name="title_admin">Admin</string>
     <string name="title_activity_individual_sports_club">IndividualSportsClubActivity</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_sports_club">SportsClubActivity</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="tab_text_1">Fixtures</string>
     <string name="tab_text_2">Results</string>
     <string name="tab_text_3">Events</string>
     <string name="title_activity_societies">SocietiesActivity</string>
     <string name="email">Email:</string>
-    <string name="societyName"></string>
-    <string name="sportsClubName"></string>
     <string name="eventWhen">When:</string>
     <string name="eventWhere">Where:</string>
     <string name="eventDescription">Description:</string>
@@ -24,4 +16,15 @@
     <string name="sportWhere">Where:</string>
     <string name="sportOpponent">Opponent:</string>
     <string name="vs">vs</string>
+    <string name="goingBtn">I\'M GOING!</string>
+    <string name="studentNoText">Please enter your student number below:</string>
+    <string name="submitButton">Submit</string>
+    <string name="studentNoEx">eg R00111222</string>
+    <string name="okEventButton">OK</string>
+    <string name="cancelEventButton">Cancel</string>
+    <string name="enterStudentNum">Enter student number below:</string>
+    <string name="seeYouThereEvent">See you there!</string>
+    <string name="errorTitleEvent">Something went wrong!</string>
+    <string name="errorMessageEvent">Student number is case sensitive. Please ensure the student number entered is in the format: R00111222</string>
+    <string name="studentNumHint">e.g. R00123456</string>
 </resources>

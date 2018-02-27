@@ -8,17 +8,12 @@
 
     <item
         android:id="@+id/navigation_sports"
-        android:icon="@drawable/home_home"
+        android:icon="@drawable/ic_sport_bike"
         android:title="Sports" />
 
     <item
         android:id="@+id/navigation_societies"
         android:icon="@drawable/home_dashboard"
         android:title="Societies" />
-
-    <item
-        android:id="@+id/navigation_admin"
-        android:icon="@drawable/home_notifications"
-        android:title="Admin" />
 
 </menu>
