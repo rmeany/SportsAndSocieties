@@ -4,10 +4,12 @@ package com.example.sportsandsocieties;
  * Created by abcd on 09/02/2018.
  */
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,7 @@ public class SportsClubFixturesFragment extends Fragment {
     private ArrayList<String> SportFixtureListCitTeam = new ArrayList<String >();
     private ArrayList<String> SportFixtureName = new ArrayList<String >();
     View view;
+    private AlertDialog.Builder errorAlert;
 
     @Nullable
     @Override
@@ -62,37 +65,50 @@ public class SportsClubFixturesFragment extends Fragment {
                     SportFixtureListCitTeam.add(team);
                 }
 
-                ListView listView = view.findViewById(R.id.fixtureLV);
-
-                HashMap<String, String> nameDate = new HashMap<>();
-                for (int i = 0;i<SportFixtureOpponentListName.size();i++){
-                    nameDate.put(/*SportFixtureListCitTeam.get(i) + " vs " + */SportFixtureOpponentListName.get(i), SportFixtureListDate.get(i));
+                if (opposition.equals("N/A")) {
+                    errorAlert = new AlertDialog.Builder(getActivity());
+                    errorAlert.setTitle("No Fixture Information");
+                    errorAlert.setMessage("No fixtures for " + sportsClub + " available.");
+                    errorAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    errorAlert.show();
                 }
-                List<HashMap<String,String>> listItems = new ArrayList<>();
-                SimpleAdapter adapter = new SimpleAdapter(getActivity(), listItems, R.layout.list_item,
-                        new String[] {"First Line", "Second Line"},
-                        new int[] {R.id.Name, R.id.Date});
-                Iterator it = nameDate.entrySet().iterator();
-                while (it.hasNext()){
-                    HashMap<String, String> resultsMap = new HashMap<>();
-                    Map.Entry pair = (Map.Entry)it.next();
-                    resultsMap.put("First Line", pair.getKey().toString());
-                    SportFixtureName.add(pair.getKey().toString());
-                    resultsMap.put("Second Line", pair.getValue().toString());
-                    listItems.add(resultsMap);
-                }
-                listView.setAdapter(adapter);
+                else {
+                    ListView listView = view.findViewById(R.id.fixtureLV);
 
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                        Intent intent = new Intent(getActivity(), SportFixtureActivity.class);
-                        sportsFixture = SportFixtureName.get(position) + " " + SportFixtureListDate.get(position);
-                        intent.putExtra("sportsClub", sportsClub);
-                        intent.putExtra("sportsFixture", sportsFixture);
-                        startActivity(intent);
+                    HashMap<String, String> nameDate = new HashMap<>();
+                    for (int i = 0; i < SportFixtureOpponentListName.size(); i++) {
+                        nameDate.put(SportFixtureOpponentListName.get(i), SportFixtureListDate.get(i));
                     }
-                });
+                    List<HashMap<String, String>> listItems = new ArrayList<>();
+                    SimpleAdapter adapter = new SimpleAdapter(getActivity(), listItems, R.layout.list_item,
+                            new String[]{"First Line", "Second Line"},
+                            new int[]{R.id.Name, R.id.Date});
+                    Iterator it = nameDate.entrySet().iterator();
+                    while (it.hasNext()) {
+                        HashMap<String, String> resultsMap = new HashMap<>();
+                        Map.Entry pair = (Map.Entry) it.next();
+                        resultsMap.put("First Line", pair.getKey().toString());
+                        SportFixtureName.add(pair.getKey().toString());
+                        resultsMap.put("Second Line", pair.getValue().toString());
+                        listItems.add(resultsMap);
+                    }
+                    listView.setAdapter(adapter);
+
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                            Intent intent = new Intent(getActivity(), SportFixtureActivity.class);
+                            sportsFixture = SportFixtureName.get(position) + " " + SportFixtureListDate.get(position);
+                            intent.putExtra("sportsClub", sportsClub);
+                            intent.putExtra("sportsFixture", sportsFixture);
+                            startActivity(intent);
+                        }
+                    });
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {}
