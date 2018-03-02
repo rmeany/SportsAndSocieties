@@ -27,4 +27,6 @@
     <string name="errorTitleEvent">Something went wrong!</string>
     <string name="errorMessageEvent">Student number is case sensitive. Please ensure the student number entered is in the format: R00111222</string>
     <string name="studentNumHint">e.g. R00123456</string>
+    <string name="citClubsInfo">CIT is home to over 40 Societies and 30 Sports Clubs.</string>
+    <string name="homePageWelcome">Welcome to CIT Sports and Societies Club App</string>
 </resources>
