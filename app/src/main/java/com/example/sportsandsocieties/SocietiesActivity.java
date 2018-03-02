@@ -1,10 +1,11 @@
 package com.example.sportsandsocieties;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -34,6 +35,7 @@ public class SocietiesActivity extends AppCompatActivity {
     private ArrayList<String> SocietyEventListDate = new ArrayList<String >();
     private ArrayList<String> SocietyEventListName = new ArrayList<String >();
     private ArrayList<String> SocietyEventName = new ArrayList<String >();
+    private AlertDialog.Builder errorAlert;
 
     @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -71,54 +73,68 @@ protected void onCreate(Bundle savedInstanceState) {
     };
     dbRef.addListenerForSingleValueEvent(eventListener);
 
-
-    dbRef = fbdb.getReference().child("Societies").child(societyName).child("events");
-    ValueEventListener eventEventListener = new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                Event e = ds.getValue(Event.class);
-                date = e.date;
-                SocietyEventListDate.add(date);
-                description = e.description;
-                SocietyEventListName.add(description);
-            }
-
-            ListView listView = findViewById(R.id.eventLV);
-
-            HashMap<String, String> nameDate = new HashMap<>();
-            for (int i = 0;i<SocietyEventListName.size();i++){
-                nameDate.put(SocietyEventListName.get(i), SocietyEventListDate.get(i));
-            }
-            List<HashMap<String,String>> listItems = new ArrayList<>();
-            SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), listItems, R.layout.list_item,
-                new String[] {"First Line", "Second Line"},
-                    new int[] {R.id.Name, R.id.Date});
-            Iterator it = nameDate.entrySet().iterator();
-            while (it.hasNext()){
-                HashMap<String, String> resultsMap = new HashMap<>();
-                Map.Entry pair = (Map.Entry)it.next();
-                resultsMap.put("First Line", pair.getKey().toString());
-                SocietyEventName.add(pair.getKey().toString());
-                resultsMap.put("Second Line", pair.getValue().toString());
-                listItems.add(resultsMap);
-            }
-            listView.setAdapter(adapter);
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                    Intent intent = new Intent(getApplicationContext(), SocietyEventActivity.class);
-                    societyEvent = SocietyEventName.get(position);
-                    intent.putExtra("societyName", societyName);
-                    intent.putExtra("societyEvent", societyEvent);
-                    startActivity(intent);
+        dbRef = fbdb.getReference().child("Societies").child(societyName).child("events");
+        ValueEventListener eventEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Event e = ds.getValue(Event.class);
+                    date = e.date;
+                    SocietyEventListDate.add(date);
+                    description = e.description;
+                    SocietyEventListName.add(description);
                 }
-            });
-        }
-        @Override
-        public void onCancelled(DatabaseError databaseError) {}
-    };
-    dbRef.addListenerForSingleValueEvent(eventEventListener);
+
+                if (description.equals("N/A")) {
+                    errorAlert = new AlertDialog.Builder(SocietiesActivity.this);
+                    errorAlert.setTitle("No Event Information");
+                    errorAlert.setMessage("No events for " + societyName + " available.");
+                    errorAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    errorAlert.show();
+                }
+                else {
+                    ListView listView = findViewById(R.id.eventLV);
+
+                    HashMap<String, String> nameDate = new HashMap<>();
+                    for (int i = 0; i < SocietyEventListName.size(); i++) {
+                        nameDate.put(SocietyEventListName.get(i), SocietyEventListDate.get(i));
+                    }
+                    List<HashMap<String, String>> listItems = new ArrayList<>();
+                    SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), listItems, R.layout.list_item,
+                            new String[]{"First Line", "Second Line"},
+                            new int[]{R.id.Name, R.id.Date});
+                    Iterator it = nameDate.entrySet().iterator();
+                    while (it.hasNext()) {
+                        HashMap<String, String> resultsMap = new HashMap<>();
+                        Map.Entry pair = (Map.Entry) it.next();
+                        resultsMap.put("First Line", pair.getKey().toString());
+                        SocietyEventName.add(pair.getKey().toString());
+                        resultsMap.put("Second Line", pair.getValue().toString());
+                        listItems.add(resultsMap);
+                    }
+                    listView.setAdapter(adapter);
+
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                            Intent intent = new Intent(getApplicationContext(), SocietyEventActivity.class);
+                            societyEvent = SocietyEventName.get(position);
+                            intent.putExtra("societyName", societyName);
+                            intent.putExtra("societyEvent", societyEvent);
+                            startActivity(intent);
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        };
+        dbRef.addListenerForSingleValueEvent(eventEventListener);
 }
 }
