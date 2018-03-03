@@ -40,6 +40,7 @@ public class SportsClubFixturesFragment extends Fragment {
     private ArrayList<String> SportFixtureOpponentListName = new ArrayList<String >();
     private ArrayList<String> SportFixtureListCitTeam = new ArrayList<String >();
     private ArrayList<String> SportFixtureName = new ArrayList<String >();
+    private ArrayList<String> SportFixtureDate = new ArrayList<String >();
     View view;
     private AlertDialog.Builder errorAlert;
 
@@ -94,6 +95,7 @@ public class SportsClubFixturesFragment extends Fragment {
                         resultsMap.put("First Line", pair.getKey().toString());
                         SportFixtureName.add(pair.getKey().toString());
                         resultsMap.put("Second Line", pair.getValue().toString());
+                        SportFixtureDate.add(pair.getValue().toString());
                         listItems.add(resultsMap);
                     }
                     listView.setAdapter(adapter);
@@ -102,7 +104,7 @@ public class SportsClubFixturesFragment extends Fragment {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                             Intent intent = new Intent(getActivity(), SportFixtureActivity.class);
-                            sportsFixture = SportFixtureName.get(position) + " " + SportFixtureListDate.get(position);
+                            sportsFixture = SportFixtureName.get(position) + " " + SportFixtureDate.get(position);
                             intent.putExtra("sportsClub", sportsClub);
                             intent.putExtra("sportsFixture", sportsFixture);
                             startActivity(intent);
