@@ -40,6 +40,7 @@ public class SportsClubEventsFragment extends Fragment {
     private ArrayList<String> SportEventListDate = new ArrayList<String >();
     private ArrayList<String> SportEventListName = new ArrayList<String >();
     private ArrayList<String> SportEventName = new ArrayList<String >();
+    private ArrayList<String> SportEventDate = new ArrayList<String >();
     View view;
     private AlertDialog.Builder errorAlert;
 
@@ -92,6 +93,7 @@ public class SportsClubEventsFragment extends Fragment {
                         resultsMap.put("First Line", pair.getKey().toString());
                         SportEventName.add(pair.getKey().toString());
                         resultsMap.put("Second Line", pair.getValue().toString());
+                        SportEventDate.add(pair.getValue().toString());
                         listItems.add(resultsMap);
                     }
                     listView.setAdapter(adapter);
@@ -100,7 +102,7 @@ public class SportsClubEventsFragment extends Fragment {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                             Intent intent = new Intent(getActivity(), SportEventActivity.class);
-                            sportsEvent = SportEventName.get(position);
+                            sportsEvent = SportEventName.get(position) + " " + SportEventDate.get(position);
                             intent.putExtra("sportsClub", sportsClub);
                             intent.putExtra("sportsEvent", sportsEvent);
                             startActivity(intent);

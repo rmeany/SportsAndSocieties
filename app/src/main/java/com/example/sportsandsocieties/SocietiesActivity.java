@@ -35,6 +35,7 @@ public class SocietiesActivity extends AppCompatActivity {
     private ArrayList<String> SocietyEventListDate = new ArrayList<String >();
     private ArrayList<String> SocietyEventListName = new ArrayList<String >();
     private ArrayList<String> SocietyEventName = new ArrayList<String >();
+    private ArrayList<String> SocietyEventDate = new ArrayList<String>();
     private AlertDialog.Builder errorAlert;
 
     @Override
@@ -114,6 +115,7 @@ protected void onCreate(Bundle savedInstanceState) {
                         resultsMap.put("First Line", pair.getKey().toString());
                         SocietyEventName.add(pair.getKey().toString());
                         resultsMap.put("Second Line", pair.getValue().toString());
+                        SocietyEventDate.add(pair.getValue().toString());
                         listItems.add(resultsMap);
                     }
                     listView.setAdapter(adapter);
@@ -122,7 +124,7 @@ protected void onCreate(Bundle savedInstanceState) {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                             Intent intent = new Intent(getApplicationContext(), SocietyEventActivity.class);
-                            societyEvent = SocietyEventName.get(position);
+                            societyEvent = SocietyEventName.get(position) + " " + SocietyEventDate.get(position);
                             intent.putExtra("societyName", societyName);
                             intent.putExtra("societyEvent", societyEvent);
                             startActivity(intent);
