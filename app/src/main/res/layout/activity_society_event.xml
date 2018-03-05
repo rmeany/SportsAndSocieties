@@ -18,7 +18,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_society_launcher_forground" />
+        app:srcCompat="@mipmap/ic_society_launcher_forground"
+        android:contentDescription="@string/societyImageDesc" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -46,7 +47,7 @@
         <TextView
             android:id="@+id/whenContent"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:textAlignment="center"
             android:textColor="#000000"

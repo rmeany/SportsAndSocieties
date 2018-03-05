@@ -29,4 +29,6 @@
     <string name="studentNumHint">e.g. R00123456</string>
     <string name="citClubsInfo">CIT is home to over 40 Societies and 30 Sports Clubs.</string>
     <string name="homePageWelcome">Welcome to CIT Sports and Societies Club App</string>
+    <string name="societyImageDesc">Societies Image</string>
+    <string name="homePageImageDesc">CIT home page logo</string>
 </resources>
