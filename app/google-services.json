@@ -1,79 +1,27 @@
 {
   "project_info": {
-    "project_number": "815232642200",
-    "firebase_url": "https://finalyearproject-67135.firebaseio.com",
-    "project_id": "finalyearproject-67135",
-    "storage_bucket": "finalyearproject-67135.appspot.com"
+    "project_number": "486164309056",
+    "firebase_url": "https://sportsandsocieties-1f6aa.firebaseio.com",
+    "project_id": "sportsandsocieties-1f6aa",
+    "storage_bucket": "sportsandsocieties-1f6aa.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:815232642200:android:0b36c5b7cd00e04f",
-        "android_client_info": {
-          "package_name": "com.example.citsportsandsocieties"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "815232642200-6a5056nieg51j94g64v05kqlk6elvp06.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.citsportsandsocieties",
-            "certificate_hash": "55158bdf66ae87284895e33f0d2f45dc358f0af1"
-          }
-        },
-        {
-          "client_id": "815232642200-1bqhobdf6di8t7aqboefp43jlhdt8v2h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyActBC3PjryqkueofViGhNXWFaVZG1dyVI"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "815232642200-1bqhobdf6di8t7aqboefp43jlhdt8v2h.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:815232642200:android:4348b4d3558c13c2",
+        "mobilesdk_app_id": "1:486164309056:android:4348b4d3558c13c2",
         "android_client_info": {
           "package_name": "com.example.sportsandsocieties"
         }
       },
       "oauth_client": [
         {
-          "client_id": "815232642200-io8b27c04bo2895nmfdukorgrtb6trh1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.sportsandsocieties",
-            "certificate_hash": "55158bdf66ae87284895e33f0d2f45dc358f0af1"
-          }
-        },
-        {
-          "client_id": "815232642200-1bqhobdf6di8t7aqboefp43jlhdt8v2h.apps.googleusercontent.com",
+          "client_id": "486164309056-d5dm8jqckgt0v7phtskrkgafdv8jqhr5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyActBC3PjryqkueofViGhNXWFaVZG1dyVI"
+          "current_key": "AIzaSyD9b3odo5z0h2Hvsm9aQ14NWrXOOVq3gRc"
         }
       ],
       "services": {
@@ -81,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "815232642200-1bqhobdf6di8t7aqboefp43jlhdt8v2h.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
