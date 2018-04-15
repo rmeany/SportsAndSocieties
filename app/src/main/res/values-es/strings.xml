@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Las sociedades y los deportes CIT</string>
+    <string name="title_home">Casa</string>
+    <string name="title_sports">Deportes</string>
+    <string name="title_societies">Sociedades</string>
+    <string name="title_activity_individual_sports_club">IndividualSportsClubActivity</string>
+    <string name="title_activity_sports_club">SportsClubActivity</string>
+    <string name="tab_text_1">Accesorios</string>
+    <string name="tab_text_2">Resultados</string>
+    <string name="tab_text_3">Acontecimientos</string>
+    <string name="title_activity_societies">SocietiesActivity</string>
+    <string name="email">Correo electrónico: </string>
+    <string name="eventWhen">Cuando:</string>
+    <string name="eventWhere">Dónde:</string>
+    <string name="eventDescription">Descripción:</string>
+    <string name="sportWhen">Cuando:</string>
+    <string name="sportWhere">Dónde:</string>
+    <string name="sportOpponent">Adversario:</string>
+    <string name="vs">vs</string>
+    <string name="goingBtn">VOY!</string>
+    <string name="studentNoText">Por favor ingrese su número de estudiante a continuación:</string>
+    <string name="submitButton">Enviar</string>
+    <string name="studentNoEx">eg R00111222</string>
+    <string name="okEventButton">DE ACUERDO</string>
+    <string name="cancelEventButton">Cancelar</string>
+    <string name="enterStudentNum">Ingrese el número de estudiante a continuación:</string>
+    <string name="seeYouThereEvent">¡Te veo allí!</string>
+    <string name="errorTitleEvent">¡Algo salió mal!</string>
+    <string name="errorMessageEvent">El número de estudiante es sensible a las mayúsculas Asegúrese de que el número de alumno ingresado esté en el formato: R00111222</string>
+    <string name="studentNumHint">e.g. R00123456</string>
+    <string name="homePageWelcome">Bienvenido a la aplicación CIT Sports and Societies Club</string>
+    <string name="societyImageDesc">Imagen de Sociedades</string>
+    <string name="homePageImageDesc">Logotipo de la página de inicio de CIT</string>
+</resources>

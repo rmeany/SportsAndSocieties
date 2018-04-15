@@ -46,9 +46,9 @@ public class SportsClubActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new SportsClubFixturesFragment(), "Fixtures");
-        adapter.addFragment(new SportsClubResultsFragment(), "Results");
-        adapter.addFragment(new SportsClubEventsFragment(), "Events");
+        adapter.addFragment(new SportsClubFixturesFragment(), getString(R.string.tab_text_1));
+        adapter.addFragment(new SportsClubResultsFragment(), getString(R.string.tab_text_2));
+        adapter.addFragment(new SportsClubEventsFragment(), getString(R.string.tab_text_3));
         viewPager.setAdapter(adapter);
     }
 

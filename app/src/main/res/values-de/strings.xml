@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">CIT Sport und Gesellschaft</string>
+    <string name="title_home">Zuhause</string>
+    <string name="title_sports">Sport</string>
+    <string name="title_societies">Gesellschaften</string>
+    <string name="title_activity_individual_sports_club">IndividualSportsClubActivity</string>
+    <string name="title_activity_sports_club">SportsClubActivity</string>
+    <string name="tab_text_1">Befestigungen</string>
+    <string name="tab_text_2">Ergebnisse</string>
+    <string name="tab_text_3">Veranstaltungen</string>
+    <string name="title_activity_societies">SocietiesActivity</string>
+    <string name="email">Email: </string>
+    <string name="eventWhen">Wann:</string>
+    <string name="eventWhere">Woher:</string>
+    <string name="eventDescription">Beschreibung:</string>
+    <string name="sportWhen">Wann:</string>
+    <string name="sportWhere">Woher:</string>
+    <string name="sportOpponent">Gegner:</string>
+    <string name="vs">vs</string>
+    <string name="goingBtn">ICH GEHE!</string>
+    <string name="studentNoText">Bitte geben Sie Ihre Studentennummer ein:</string>
+    <string name="submitButton">Einreichen</string>
+    <string name="studentNoEx">eg R00111222</string>
+    <string name="okEventButton">OK</string>
+    <string name="cancelEventButton">Stornieren</string>
+    <string name="enterStudentNum">Geben Sie die Nummer des Studenten ein:</string>
+    <string name="seeYouThereEvent">Wir sehen uns dort!</string>
+    <string name="errorTitleEvent">Etwas ist schief gelaufen!</string>
+    <string name="errorMessageEvent">Kursteilnehmernummer ist Groß-und Kleinschreibung. Bitte stellen Sie sicher, dass die eingegebene Studentennummer im folgenden Format ist: R00111222</string>
+    <string name="studentNumHint">e.g. R00123456</string>
+    <string name="homePageWelcome">Willkommen bei CIT Sports und Societies Club App</string>
+    <string name="societyImageDesc">Bild von Gesellschaften</string>
+    <string name="homePageImageDesc">Logo der CIT-Homepage</string>
+</resources>

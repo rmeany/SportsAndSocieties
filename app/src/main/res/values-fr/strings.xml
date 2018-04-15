@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">CIT Sports et Sociétés</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_sports">Sports</string>
+    <string name="title_societies">Sociétés</string>
+    <string name="title_activity_individual_sports_club">IndividualSportsClubActivity</string>
+    <string name="title_activity_sports_club">SportsClubActivity</string>
+    <string name="tab_text_1">Agencements</string>
+    <string name="tab_text_2">Résultats</string>
+    <string name="tab_text_3">Événements</string>
+    <string name="title_activity_societies">SocietiesActivity</string>
+    <string name="email">Email: </string>
+    <string name="eventWhen">Quand:</string>
+    <string name="eventWhere">Où:</string>
+    <string name="eventDescription">La description:</string>
+    <string name="sportWhen">Quand:</string>
+    <string name="sportWhere">Où:</string>
+    <string name="sportOpponent">Adversaire:</string>
+    <string name="vs">contre</string>
+    <string name="goingBtn">Je vais!</string>
+    <string name="studentNoText">Veuillez entrer votre numéro d\'étudiant ci-dessous:</string>
+    <string name="submitButton">Soumettre</string>
+    <string name="studentNoEx">par exemple R00111222</string>
+    <string name="okEventButton">D\'accord</string>
+    <string name="cancelEventButton">Annuler</string>
+    <string name="enterStudentNum">Entrez le numéro d\'étudiant ci-dessous</string>
+    <string name="seeYouThereEvent">On se voit là-bas!</string>
+    <string name="errorTitleEvent">Quelque chose s\'est mal passé!</string>
+    <string name="errorMessageEvent">Le nombre d\'étudiants est sensible à la casse. Veuillez vous assurer que le numéro d\'étudiant entré est au format R00111222</string>
+    <string name="studentNumHint">par exemple R00123456</string>
+    <string name="homePageWelcome">Bienvenue à l\'application CIT Sports et Sociétés</string>
+    <string name="societyImageDesc">Sociétés Image</string>
+    <string name="homePageImageDesc">Logo de la page d\'accueil CIT</string>
+</resources>

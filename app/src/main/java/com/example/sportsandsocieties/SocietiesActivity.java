@@ -67,7 +67,7 @@ protected void onCreate(Bundle savedInstanceState) {
         public void onDataChange(DataSnapshot dataSnapshot) {
             email = dataSnapshot.getValue(String.class);
             TextView emailText = findViewById(R.id.contactEmail);
-            emailText.setText(email);
+            emailText.setText(String.format("%s %s", getString(R.string.email), email));
         }
         @Override
         public void onCancelled(DatabaseError databaseError) {}

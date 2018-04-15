@@ -18,21 +18,21 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    getSupportActionBar().setTitle("CIT Sports and Societies");
+                    getSupportActionBar().setTitle(getString(R.string.app_name));
                     fragmentManager.beginTransaction().
                             replace(R.id.content_frame,
                                     new HomeFragment())
                             .commit();
                     return true;
                 case R.id.navigation_sports:
-                    getSupportActionBar().setTitle("Sports Clubs");
+                    getSupportActionBar().setTitle(getString(R.string.title_sports));
                     fragmentManager.beginTransaction().
                             replace(R.id.content_frame,
                                     new SportsFragment())
                             .commit();
                     return true;
                 case R.id.navigation_societies:
-                    getSupportActionBar().setTitle("Societies");
+                    getSupportActionBar().setTitle(getString(R.string.title_societies));
                     fragmentManager.beginTransaction().
                             replace(R.id.content_frame,
                                     new SocietiesFragment())
