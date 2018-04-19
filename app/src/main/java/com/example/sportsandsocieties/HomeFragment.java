@@ -52,6 +52,7 @@ public class HomeFragment extends Fragment {
 
 
         dbRef = fbdb.getReference().child("General").child("general").child("events");
+        dbRef.keepSynced(true);
         ValueEventListener eventEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
