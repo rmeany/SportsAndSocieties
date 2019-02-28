@@ -19,6 +19,9 @@ Societies:
 Each event in the application has a button to indicate they're interested in going to the event. This is essentially an attendance tracker that can be used to provide end of year analytics on what type of events have the biggest turnouts for a given Sports club or Society.
 
 This mobile app has been localised for the following languages:
+
 -Spanish (ES)
+
 -French (FR)
+
 -German (DE)
